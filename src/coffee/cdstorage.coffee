@@ -4,7 +4,7 @@ window.CDStorage =
   setItem: (name, value, erase = false) ->
     domain = null
     domainParts = null
-    expires = if erase then '; expires=Thu, 01 Jan 1970 00:00:01 GMT' else ''
+    expires = if erase then "; expires=Thu, 01 Jan 1970 00:00:01 GMT" else ""
     host = null
     valueString = JSON.stringify value # transform data to string
 
@@ -30,7 +30,8 @@ window.CDStorage =
 
       # check if cookie was successfuly set to the given domain
       # (otherwise it was a Top-Level Domain)
-      if @getItem(name) is null or @getItem(name) isnt value
+      savedValue = @getItem(name)
+      if savedValue is null or not @_equal(savedValue, value)
         # append "." to current domain
         domain = '.' + host
         document.cookie = "#{name}=#{valueString}#{expires}; path=/; domain=#{domain}"
@@ -50,3 +51,12 @@ window.CDStorage =
 
   removeItem: (name) ->
     @setItem name, '', true
+
+  _equal: (v1, v2) ->
+    if ({}).toString.call(v1) is '[object Object]' and ({}).toString.call(v2) is '[object Object]'
+      for k in v1
+        if v1[k] isnt v2[k]
+          return false
+      return true
+    else
+      return v1 is v2
