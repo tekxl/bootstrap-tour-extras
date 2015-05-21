@@ -52,11 +52,12 @@ window.CDStorage =
   removeItem: (name) ->
     @setItem name, '', true
 
-  _equal: (v1, v2) ->
-    if ({}).toString.call(v1) is '[object Object]' and ({}).toString.call(v2) is '[object Object]'
-      for k in v1
-        if v1[k] isnt v2[k]
-          return false
+  _equal: (obj1, obj2) ->
+    if ({}).toString.call(obj1) is '[object Object]' and ({}).toString.call(obj2) is '[object Object]'
+      for k,v of obj1
+        return false if obj2[k] isnt v
+      for k,v of obj2
+        return false if obj1[k] isnt v
       return true
     else
-      return v1 is v2
+      return obj1 is obj2
