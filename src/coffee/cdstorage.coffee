@@ -6,7 +6,7 @@ window.CDStorage =
     domainParts = null
     expires = if erase then "; expires=Thu, 01 Jan 1970 00:00:01 GMT" else ""
     host = null
-    valueString = JSON.stringify value # transform data to string
+    valueString = window.encodeURIComponent(JSON.stringify value) # transform data to string and encode it
 
     host = document.location.hostname
     if host.split('.').length is 1
@@ -45,7 +45,7 @@ window.CDStorage =
         c = c.substring(1, c.length)
 
       value = c.substring(nameEQ.length, c.length) if c.indexOf(nameEQ) is 0
-      return JSON.parse(value) if value
+      return JSON.parse(window.decodeURIComponent(value)) if value
 
     null
 
@@ -54,10 +54,20 @@ window.CDStorage =
 
   _equal: (obj1, obj2) ->
     if ({}).toString.call(obj1) is '[object Object]' and ({}).toString.call(obj2) is '[object Object]'
+      obj1Keys = Object.keys(obj1)
+      obj2Keys = Object.keys(obj2)
+      return false if obj1Keys.length isnt obj2Keys.length
+
       for k,v of obj1
-        return false if obj2[k] isnt v
-      for k,v of obj2
-        return false if obj1[k] isnt v
+        return false if not @_equal(obj2[k], v)
+
+      return true
+    else if ({}).toString.call(obj1) is '[object Array]' and ({}).toString.call(obj2) is '[object Array]'
+      return false if obj1.length isnt obj2.length
+
+      for v,k in obj1
+        return false if not @_equal(v, obj2[k])
+
       return true
     else
       return obj1 is obj2
