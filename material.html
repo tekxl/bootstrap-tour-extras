@@ -19,7 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Bootstrap Tour Extras</a>
+          <a class="navbar-brand" href="index.html">Bootstrap Tour Extras</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,37 +43,48 @@
     </nav>
 
     <div class="jumbotron">
-      <h1 id="title">Jumbotron heading</h1>
-      <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-      <p><a class="btn btn-lg btn-success" href="#" role="button" id="submit-btn">Sign up today</a></p>
+      <h1 id="title">Bootstrap Tour Extra</h1>
+      <p class="lead">Some tools and themes to extend Bootstrap Tour: Cross-domain localStorage, popup themes.</p>
+      <p>
+        <iframe src="https://ghbtns.com/github-btn.html?user=tekxl&repo=bootstrap-tour-extras&type=star&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=tekxl&repo=bootstrap-tour-extras&type=fork&count=true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+      </p>
+      <p><a class="btn btn-lg btn-success" href="https://github.com/tekxl/bootstrap-tour-extras" target="_blank" role="button" id="github-btn"></i>github repository</a></p>
     </div>
 
     <div class="row">
       <div class="col-lg-6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+        <h3 id="theme-howto">How to use Material theme?</h3>
+        <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Demo Page&lt;/title&gt;
+  &lt;link href="bootstrap.min.css" rel="stylesheet"&gt;
+  &lt;link href="bootstrap-tour.min.css" rel="stylesheet"&gt;
+  &lt;link href="theme-material.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+&lt;/body&gt;
+&lt;/html&gt;</pre>
       </div>
 
       <div class="col-lg-6">
-        <h4>Subheading</h4>
-        <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-        <h4>Subheading</h4>
-        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-        <h4>Subheading</h4>
-        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+        <h3 id="cross-domain-howto">Cross domain storage</h3>
+        <pre>&lt;script type="text/javascript" src="cdstorage.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  var tour = new Tour({
+    name: "tour",
+    storage: window.CDStorage,
+    ...
+  });
+&lt;/script&gt;</pre>
       </div>
     </div>
 
     <footer>
-      <p>&copy; 2015 Company, Inc.</p>
+      <p>&copy; 2015 <a href="http://tekxl.com" target="_blank">TEKXL</a>, Inc.</p>
     </footer>
 
   </div> <!-- /container -->
@@ -87,14 +98,26 @@
     steps: [
       {
         element: "#title",
-        title: "Welcome to Bootstrap Tour!",
-        content: "Introduce new users to your product by walking them through it step by step.",
+        title: "Welcome to Bootstrap Tour Extra!",
+        content: "Some tools and themes to extend Bootstrap Tour: Cross-domain localStorage, popup themes.",
         placement: 'bottom'
       },
       {
-        element: "#submit-btn",
-        title: "Sign up today",
-        content: "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus.",
+        element: "#theme-howto",
+        title: "How to use Material theme?",
+        content: "Just include the <code>theme-material.css</code> in your website.",
+        placement: 'top'
+      },
+      {
+        element: "#cross-domain-howto",
+        title: "Cross domain storage",
+        content: "This allows you to use bootstrap tour in several subdomains.",
+        placement: 'top'
+      },
+      {
+        element: "#github-btn",
+        title: "Want to suggest more extras?",
+        content: "Just fork the repository and suggest us your extras.",
         placement: 'right'
       }
     ]});
