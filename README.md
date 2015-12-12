@@ -12,3 +12,19 @@ First, include the `cdstorage.js` in your application and use it for bootstrap-t
         ...
       });
     </script>
+# Use a theme
+Just add the theme css file in your html file.
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <title>Demo Page</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <link href="bootstrap-tour.min.css" rel="stylesheet">
+        <link href="theme-cosmos.css" rel="stylesheet">
+      </head>
+      <body>
+
+      </body>
+    </html>
