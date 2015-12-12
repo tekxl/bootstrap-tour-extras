@@ -1,0 +1,35 @@
+@import 'theme-default.less';
+
+@background-color: #FAFAFA;
+@border-color: rgba(0,0,0,0.10);
+@text-color: #666666;
+
+// Title
+@title-background-color: #EEEEEE;
+@title-border-color: rgba(0,0,0,0.30);
+@title-text-color: @text-color;
+
+// Navigation buttons
+@btn-text-color: #fff;
+@btn-background-color: #008DC5;
+@btn-border-color: rgba(0,0,0,0.20);
+@btn-disabled-color: @btn-border-color;
+
+.popover {
+  font-weight: 300;
+  text-shadow: 0px 1px 0px #FFFFFF;
+
+  .popover-title {
+    .gradient(#FFFFFF 0%, #EEEEEE 100%);
+  }
+
+  .popover-navigation .btn-default {
+    font-weight: 300;
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.20);
+    .gradient(#00B4F5 0%, #008DC5 100%);
+
+    &.disabled {
+      .gradient(#00B4F5 0%, #008DC5 100%);
+    }
+  }
+}

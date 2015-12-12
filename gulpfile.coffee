@@ -47,6 +47,10 @@ gulp.task 'clean-test', ->
   .src paths.test
   .pipe $.clean()
 
+gulp.task 'watch', ->
+  gulp.watch "#{paths.src}/coffee/*", ['coffee']
+  gulp.watch "#{paths.src}/less/*", ["less"]
+
 # tasks
 gulp.task 'clean', ['clean-dist', 'clean-test']
 gulp.task 'dist', ['coffee','less']

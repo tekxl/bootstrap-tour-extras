@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+.popover {
+  border: 1px solid #eeeeee;
+  background: #ffffff;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.popover.bottom > .arrow {
+  border-bottom-color: #eeeeee;
+}
+.popover.bottom > .arrow::after {
+  border-bottom-color: #ffffff;
+}
+.popover.top > .arrow {
+  border-top-color: #eeeeee;
+}
+.popover.top > .arrow::after {
+  border-top-color: #ffffff;
+}
+.popover.left > .arrow {
+  border-left-color: #eeeeee;
+}
+.popover.left > .arrow::after {
+  border-left-color: #ffffff;
+}
+.popover.right > .arrow {
+  border-right-color: #eeeeee;
+}
+.popover.right > .arrow::after {
+  border-right-color: #ffffff;
+}
+.popover .popover-title {
+  color: #ffffff;
+  background: #2196f3;
+  border-bottom: 1px solid #eeeeee;
+}
+.popover .popover-content {
+  color: #666666;
+}
+.popover .popover-navigation .btn-default {
+  color: #666666;
+  background: #ffffff;
+  border-color: #eeeeee;
+}
+.popover .popover-navigation .btn-default:hover {
+  background: #ffffff;
+}
+.popover .popover-navigation .btn-default.disabled {
+  opacity: 1;
+  background: #ffffff;
+  color: #afafaf;
+}
+.popover {
+  font-weight: 300;
+}
+.popover .popover-navigation .btn-default {
+  font-weight: 300;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+}
+.popover .popover-navigation .btn-group {
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+.popover .popover-navigation .btn-group .btn-default {
+  box-shadow: none;
+}

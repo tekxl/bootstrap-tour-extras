@@ -1,0 +1,53 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+.popover {
+  border: 1px solid #dd4814;
+  background: #ffffff;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+.popover.bottom > .arrow {
+  border-bottom-color: #dd4814;
+}
+.popover.bottom > .arrow::after {
+  border-bottom-color: #ffffff;
+}
+.popover.top > .arrow {
+  border-top-color: #dd4814;
+}
+.popover.top > .arrow::after {
+  border-top-color: #ffffff;
+}
+.popover.left > .arrow {
+  border-left-color: #dd4814;
+}
+.popover.left > .arrow::after {
+  border-left-color: #ffffff;
+}
+.popover.right > .arrow {
+  border-right-color: #dd4814;
+}
+.popover.right > .arrow::after {
+  border-right-color: #ffffff;
+}
+.popover .popover-title {
+  color: #ffffff;
+  background: #dd4814;
+  border-bottom: 1px solid #dd4814;
+}
+.popover .popover-content {
+  color: #262626;
+}
+.popover .popover-navigation .btn-default {
+  color: #ffffff;
+  background: #772953;
+  border-color: #511c39;
+}
+.popover .popover-navigation .btn-default:hover {
+  background: #8a3060;
+}
+.popover .popover-navigation .btn-default.disabled {
+  opacity: 1;
+  background: #772953;
+  color: #d54b95;
+}

@@ -1,0 +1,84 @@
+@import (css) url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+@background-color: #fff;
+@border-color: rgba(0,0,0,.2);
+@text-color: #333;
+@font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+// Title
+@title-background-color: #f7f7f7;
+@title-border-color: #ebebeb;
+@title-text-color: #333;
+
+// Navigation buttons
+@btn-text-color: #333;
+@btn-background-color: #fff;
+@btn-border-color: rgba(0,0,0,.2);
+@btn-disabled-color: #718081;
+
+.arrow(@position) {
+  > .arrow {
+    border-@{position}-color: @border-color;
+
+    &::after {
+      border-@{position}-color: @background-color;
+    }
+  }
+}
+
+.gradient(@start, @end) {
+  background-image: -webkit-linear-gradient(@start, @end);
+  background-image: -o-linear-gradient(@start, @end);
+  background-image: linear-gradient(@start, @end);
+}
+
+.popover {
+  border: 1px solid @border-color;
+  background: @background-color;
+  padding: 0;
+  font-family: @font-family;
+
+  &.bottom {
+    .arrow(bottom);
+  }
+
+  &.top {
+   .arrow(top);
+  }
+
+  &.left {
+    .arrow(left);
+  }
+
+  &.right {
+    .arrow(right);
+  }
+
+  .popover-title {
+    color: @title-text-color;
+    background: @title-background-color;
+    border-bottom: 1px solid @title-border-color;
+  }
+
+  .popover-content {
+    color: @text-color;
+  }
+
+  .popover-navigation {
+    .btn-default {
+      color: @btn-text-color;
+      background: @btn-background-color;
+      border-color: @btn-border-color;
+
+      &:hover {
+        background: lighten(@btn-background-color, 5%);
+      }
+
+      &.disabled {
+        opacity: 1;
+        background: @btn-background-color;
+        color: @btn-disabled-color;
+      }
+    }
+  }
+}

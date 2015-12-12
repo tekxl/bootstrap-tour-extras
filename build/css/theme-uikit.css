@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+.popover {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fafafa;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.popover.bottom > .arrow {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+.popover.bottom > .arrow::after {
+  border-bottom-color: #fafafa;
+}
+.popover.top > .arrow {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+.popover.top > .arrow::after {
+  border-top-color: #fafafa;
+}
+.popover.left > .arrow {
+  border-left-color: rgba(0, 0, 0, 0.1);
+}
+.popover.left > .arrow::after {
+  border-left-color: #fafafa;
+}
+.popover.right > .arrow {
+  border-right-color: rgba(0, 0, 0, 0.1);
+}
+.popover.right > .arrow::after {
+  border-right-color: #fafafa;
+}
+.popover .popover-title {
+  color: #666666;
+  background: #eeeeee;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.popover .popover-content {
+  color: #666666;
+}
+.popover .popover-navigation .btn-default {
+  color: #ffffff;
+  background: #008dc5;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.popover .popover-navigation .btn-default:hover {
+  background: #009fdf;
+}
+.popover .popover-navigation .btn-default.disabled {
+  opacity: 1;
+  background: #008dc5;
+  color: rgba(0, 0, 0, 0.2);
+}
+.popover {
+  font-weight: 300;
+  text-shadow: 0px 1px 0px #FFFFFF;
+}
+.popover .popover-title {
+  background-image: -webkit-linear-gradient(#ffffff 0%, #eeeeee 100%);
+  background-image: -o-linear-gradient(#ffffff 0%, #eeeeee 100%);
+  background-image: linear-gradient(#ffffff 0%, #eeeeee 100%);
+}
+.popover .popover-navigation .btn-default {
+  font-weight: 300;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+  background-image: -webkit-linear-gradient(#00b4f5 0%, #008dc5 100%);
+  background-image: -o-linear-gradient(#00b4f5 0%, #008dc5 100%);
+  background-image: linear-gradient(#00b4f5 0%, #008dc5 100%);
+}
+.popover .popover-navigation .btn-default.disabled {
+  background-image: -webkit-linear-gradient(#00b4f5 0%, #008dc5 100%);
+  background-image: -o-linear-gradient(#00b4f5 0%, #008dc5 100%);
+  background-image: linear-gradient(#00b4f5 0%, #008dc5 100%);
+}
